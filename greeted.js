@@ -36,7 +36,7 @@ module.exports = function(){
     const greetedCounter = counterMap[username]
 
     res.render('greetings/index', {greetings : username});
-
+    console.log(username);
   }
 
   const counter = function(req,res){
@@ -44,8 +44,8 @@ module.exports = function(){
   var username = req.parms.username;
   const greetedCounter = counterMap[username];
   res.send("Hello,"+ " " + username + " " +"has been greeted" +" " + greetedCounter +" "+"time(s)")
-
-  }
+  console.log(greetedCounter);
+    }
 
   return {
 
