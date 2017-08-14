@@ -1,16 +1,28 @@
 <div class="container">
-  <h1>Greeting</h1>
+  <h1>Greetings Application</h1><br>
 
-  <form action="/greeted" method="post">
+  <form class="details" action="/greeted" method="post">
     <label>Enter name:<label>
-    <input type="text" name="username" placeholder="Type name to greet"></br>
+    <input id="username" type="text" name="username" placeholder="Type name to greet"></br><br>
+
+    <input type="radio" name="languange" id="english" value="english"><label>English</label>
+    <input type="radio" name="languange" id="french" value="french"><label>French</label>
+    <input type="radio" name="languange" id="tshivenda" value="tshivenda"><label>Tshivenda</label><br><br>
+
     <input class="greet" type="submit" name="" value="Greet Me"><br><br>
 
+  {{#if messages.greetMessage}}
     <div class="greetMessage">
       {{messages.greetMessage}}
       {{greetings}}
       <br>
       <br>
+   </div>
+  {{/if}}
+
+  <div class="counter">
+    {{counter}}
+    <br>
   </div>
 
   {{#if messages.error}}
@@ -20,5 +32,8 @@
       <br>
     </div>
   {{/if}}
+
+
+  <a class="view" href="greetings/add">View all names greeted</a>
   </form>
 </div>
